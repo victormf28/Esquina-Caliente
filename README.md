@@ -81,8 +81,6 @@ Nuestra interfaz debe mostrar los dos menús (desayuno y resto del día), cada u
 con todos sus _productos_. El usuario debe poder ir eligiendo que _productos_
 agregar y la interfaz debe ir mostrando el _resumen del pedido_ con el total.
 
-![out](https://user-images.githubusercontent.com/110297/45984241-b8b51c00-c025-11e8-8fa4-a390016bee9d.gif)
-
 ## Objetivos
 
 El objetivo principal de este proyecto es construir una
