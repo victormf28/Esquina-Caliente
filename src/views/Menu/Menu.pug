@@ -1,0 +1,30 @@
+.menu
+    el-menu.el-menu-demo(default-active='1' mode='horizontal')
+        el-menu-item(index='1') Desayuno
+        el-menu-item(index='2') Almuerzo
+        el-menu-item(index='3') Cena
+    
+    .menu__cards
+        el-card
+            img.menu__card-image(src='./../../assets/cafe-americano.jpg')
+            .menu__card-description
+                .menu__card-description-title Café Americano
+                .menu__card-description-price S/ 11.99
+        
+        el-card
+            img.menu__card-image(src='./../../assets/cafe-con-leche.jpg')
+            .menu__card-description
+                .menu__card-description-title Café con leche
+                .menu__card-description-price S/ 12.99
+        
+        el-card
+            img.menu__card-image(src='./../../assets/sandwich-mixto.jpg')
+            .menu__card-description
+                .menu__card-description-title Sandwich de jamón y queso
+                .menu__card-description-price S/ 8.99
+
+        el-card
+            img.menu__card-image(src='./../../assets/jugo-natural.jpg')
+            .menu__card-description
+                .menu__card-description-title Jugo natural
+                .menu__card-description-price S/ 9.99

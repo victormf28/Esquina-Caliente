@@ -1,0 +1,11 @@
+.home
+    h3.home__title Ingrese su nombre:
+    el-form(ref="form" :model="form" label-width="120px" @submit.native.prevent="")
+        el-input(placeholder="Ejemplo: Victor Morales" autofocus)
+        el-button(
+            type="success"
+            icon="el-icon-check"
+            native-type="submit"
+            @click="onSubmit"
+        )
+        

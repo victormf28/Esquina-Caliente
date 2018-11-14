@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
+
+import Home from './views/Home/Home.vue';
+import Menu from './views/Menu/Menu.vue';
 
 Vue.use(Router);
 
@@ -12,6 +14,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
+    },
+    {
+      path: '/menu',
+      name: 'menu',
+      component: Menu,
     },
     {
       path: '/about',
