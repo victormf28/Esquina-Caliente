@@ -1,0 +1,47 @@
+.p-menu
+   padding: 20px;
+   display: flex;
+   flex-direction: row;
+
+.p-menu__tabs
+   width: calc(100% - 250px);
+
+.p-menu__cards
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   flex-wrap: wrap;
+
+   .el-card
+      cursor: pointer;
+      width: 32%;
+      margin-bottom: 10px;
+
+      >>>
+         .el-card__body
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            height: 100%;
+
+.p-menu__card-image
+   max-height: 70px;
+
+.p-menu__card-description
+   padding: 10px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: flex-end;
+   flex-grow: 50;
+
+.p-menu__card-description-title
+   text-align: left;
+   width: 100%;
+   margin-bottom: 5px;
+
+.p-menu__card-description-price
+   color: #409EFF;
+
+.p-menu__cart
+   width: 250px;

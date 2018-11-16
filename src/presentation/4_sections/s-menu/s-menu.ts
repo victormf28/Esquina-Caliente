@@ -6,13 +6,8 @@ import HelloWorld from '@/components/HelloWorld.vue';
     HelloWorld,
   },
 })
-export default class Menu extends Vue {
-  private form: any = {};
+export default class SMenu extends Vue {
   constructor() {
     super();
-  }
-
-  public onSubmit() {
-    // console.log('submittt');
   }
 }

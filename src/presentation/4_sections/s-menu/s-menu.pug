@@ -1,0 +1,13 @@
+.s-menu   
+   .s-menu__avatar
+      img.s-menu__avatar-image(src="@/assets/naruto.png")
+      .s-menu__avatar-detail
+         .s-menu__avatar-name Victor Morales
+         .s-menu__avatar-role Administrador
+   el-menu.el-menu-vertical-demo(default-active='1')
+      el-menu-item(index='1' route="/registrar-orden/cliente")
+         i.el-icon-edit-outline
+         span Registrar Orden
+      el-menu-item(index='2' route="/atender-ordenes")
+         i.el-icon-tickets
+         span Servir Ordenes

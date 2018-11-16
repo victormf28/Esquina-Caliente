@@ -4,9 +4,9 @@ root = true
 indent_style = space
 end_of_line = lf
 charset = utf-8
-insert_final_newline = false
+insert_final_newline = true
 
-[*.{pug}]
+[*.{pug,styl}]
 indent_size = 3
 
 [*.{js,ts}]

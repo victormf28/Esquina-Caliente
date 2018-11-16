@@ -1,0 +1,41 @@
+.s-menu
+   position: absolute;
+   left: -170px;
+   top: 0;
+   width: 170px;
+   height: 100%;
+   z-index: 20;
+   background: white;
+   transition: .2s linear;
+
+   &.is-active
+      left: 0px;
+
+   .el-menu
+      height: calc(100% - 60px);
+      text-align: left;
+
+.s-menu__avatar
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   padding: 20px 20px 5px 20px;
+   border-right: 1px solid #DCDFE6;
+
+.s-menu__avatar-image
+   width: 35px;
+   height: 35px;
+   border-radius: 50%;
+   margin-right: 7px;
+
+.s-menu__avatar-detail
+   text-align: left;
+   font-size: 12px;
+
+.s-menu__avatar-name
+   margin-bottom: 5px;
+   color: #303133;
+
+.s-menu__avatar-role
+   font-size: 10px;
+   color: #606266;

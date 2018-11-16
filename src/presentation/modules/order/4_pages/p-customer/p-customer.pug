@@ -1,0 +1,19 @@
+l-main
+   .p-customer
+      el-form(
+         ref="form", 
+         :model="form",
+         label-width="120px",
+         @submit.native.prevent=""
+         )
+         el-input(
+            placeholder="Ingrese Nombre del Cliente",
+            size="medium",
+            autofocus,
+            v-model="form.customerName"
+            )
+         el-button(
+               type="primary"
+               native-type="submit"
+               @click="onSubmit"
+            )  Siguiente 

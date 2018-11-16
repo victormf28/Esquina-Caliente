@@ -3,6 +3,8 @@ import Router from 'vue-router';
 
 import Home from './views/Home/Home.vue';
 import Menu from './views/Menu/Menu.vue';
+import PCustomer from './presentation/modules/order/4_pages/p-customer/p-customer.vue';
+import PMenu from './presentation/modules/order/4_pages/p-menu/p-menu.vue';
 
 Vue.use(Router);
 
@@ -19,6 +21,16 @@ export default new Router({
       path: '/menu',
       name: 'menu',
       component: Menu,
+    },
+    {
+      path: '/registrar-orden/cliente',
+      name: 'OrderCustomer',
+      component: PCustomer,
+    },
+    {
+      path: '/registrar-orden/menu',
+      name: 'OrderMenu',
+      component: PMenu,
     },
     {
       path: '/about',

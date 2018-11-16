@@ -1,5 +1,16 @@
 import Vue from 'vue'
-import { Button, Input, Icon, Form, FormItem, Menu, MenuItem, Card } from 'element-ui'
+import {
+  Button,
+  Input,
+  Icon,
+  Form,
+  FormItem,
+  Menu,
+  MenuItem,
+  Card,
+  Tabs,
+  TabPane
+} from 'element-ui'
 import lang from 'element-ui/lib/locale/lang/es'
 import locale from 'element-ui/lib/locale'
 
@@ -13,3 +24,5 @@ Vue.use(FormItem)
 Vue.use(Menu)
 Vue.use(MenuItem)
 Vue.use(Card)
+Vue.use(Tabs)
+Vue.use(TabPane)

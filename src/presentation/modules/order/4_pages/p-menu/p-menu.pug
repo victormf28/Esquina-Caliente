@@ -1,0 +1,15 @@
+l-main
+   .p-menu
+      el-tabs.p-menu__tabs(v-model='activeName',)
+         el-tab-pane.p-menu__cards(label='Desayuno', name='breakfast')
+            el-card(v-for="item in menu.breakfast")
+               img.p-menu__card-image(:src='item.image')
+               .p-menu__card-description
+                  .p-menu__card-description-title {{item.name}}
+                  .p-menu__card-description-price S/ {{item.price}}
+
+         el-tab-pane(label='Almuerzo', name='lunch') Almuerzo
+         el-tab-pane(label='Cena', name='dinner') Cena
+      
+      .p-menu__cart
+      
