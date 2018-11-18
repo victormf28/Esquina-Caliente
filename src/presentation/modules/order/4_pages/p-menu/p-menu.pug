@@ -1,15 +1,56 @@
-l-main
+l-main(title="Realizar Orden")
    .p-menu
-      el-tabs.p-menu__tabs(v-model='activeName',)
+      el-tabs.p-menu__tabs(v-model='activeName')
          el-tab-pane.p-menu__cards(label='Desayuno', name='breakfast')
             el-card(v-for="item in menu.breakfast")
-               img.p-menu__card-image(:src='item.image')
-               .p-menu__card-description
+               .p-menu__card-image-content
+                  img.p-menu__card-image(:src='item.image', @click="onCard(item)")
+               .p-menu__card-description(@click="onCard(item)")
                   .p-menu__card-description-title {{item.name}}
                   .p-menu__card-description-price S/ {{item.price}}
 
-         el-tab-pane(label='Almuerzo', name='lunch') Almuerzo
-         el-tab-pane(label='Cena', name='dinner') Cena
+         el-tab-pane.p-menu__cards(label='Almuerzo', name='lunch')
+            el-card(v-for="item in menu.lunch")
+               .p-menu__card-image-content
+                  img.p-menu__card-image(:src='item.image', @click="onCard(item)")
+               .p-menu__card-description(@click="onCard(item)")
+                  .p-menu__card-description-title {{item.name}}
+                  .p-menu__card-description-price S/ {{item.price}}
       
       .p-menu__cart
-      
+         div
+            h2.p-menu__cart-title 
+               | Resumen de Pedido para&nbsp;
+               span.p-menu__cart-name {{orderState.curtomerName}}
+            el-table(highlight-current-row, ref="menu", :data='menuSelected', style='width: 100%')
+               el-table-column(label='Producto')
+                  template(slot-scope="scope")
+                     .p-menu__cart-item
+                        .p-menu__cart-item-img-content
+                           img.p-menu__cart-item-img(:src="scope.row.image")
+                        .p-menu__cart-item-name {{scope.row.name}}
+               el-table-column(label='Cantidad', width='70', class-name="p-menu__cart-number")
+                  template(slot-scope="scope")
+                     el-input(
+                        :value="scope.row.number",
+                        @input="onNumberItem(scope.row.id, $event)",
+                        type="number",
+                        :min="0"
+                        )
+               el-table-column(label='Subtotal', width='70', class-name="p-menu__cart-price")
+                  template(slot-scope="scope")
+                     p S/ {{scope.row.number*scope.row.price}}
+            
+            .p-menu__cart-total
+               .p-menu__cart-total-title Total por consumo
+               .p-menu__cart-total-price S/ {{totalPrice}}
+         
+         div
+            router-link.p-menu__back(:to="{ name: 'OrderCustomer'}")
+               el-button(rout) Cancelar
+            
+            el-button(
+               type="primary",
+               :disabled="totalPrice === 0",
+               @click="onConfirm()"
+            )  Enviar a Cocina

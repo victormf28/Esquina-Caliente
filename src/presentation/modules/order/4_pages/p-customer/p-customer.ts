@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import { State, Mutation } from 'vuex-class';
+import { Mutation } from 'vuex-class';
 
 import LMain from '@/presentation/5_layouts/l-main/l-main.vue';
 
@@ -18,7 +18,9 @@ export default class PCustomer extends Vue {
   }
 
   public onSubmit() {
-    this.updateCustomerNameMutation(this.form.customerName);
-    this.$router.push({ name: 'OrderMenu' });
+    if (this.form.customerName && this.form.customerName.trim() !== '') {
+      this.updateCustomerNameMutation(this.form.customerName);
+      this.$router.push({ name: 'OrderMenu' });
+    }
   }
 }

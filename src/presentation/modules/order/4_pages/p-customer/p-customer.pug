@@ -1,7 +1,7 @@
-l-main
+l-main(title="Realizar Orden")
    .p-customer
       el-form(
-         ref="form", 
+         ref="formCustomer", 
          :model="form",
          label-width="120px",
          @submit.native.prevent=""
@@ -10,8 +10,9 @@ l-main
             placeholder="Ingrese Nombre del Cliente",
             size="medium",
             autofocus,
-            v-model="form.customerName"
-            )
+            v-model="form.customerName",
+            required
+         )
          el-button(
                type="primary"
                native-type="submit"

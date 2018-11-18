@@ -12,4 +12,12 @@ export class MenuService extends Http {
   public getMenu(): Promise<any> {
     return this.get(`${this.URL_API}/menu`);
   }
+
+  public postOrder(params: any): Promise<any> {
+    return this.post(`${this.URL_API}/orders`, params);
+  }
+
+  public getOrders(): Promise<any> {
+    return this.get(`${this.URL_API}/orders`);
+  }
 }

@@ -1,0 +1,35 @@
+l-main(title="Listar Ordenes")
+   .p-list-order
+      
+      el-card.p-list-order__cart(v-for="item in orders")
+         h2.p-list-order__cart-title 
+            | Pedido para&nbsp;
+            span.p-list-order__cart-name {{item.curtomerName}}
+
+         el-table(ref="menu", :data='item.order', style='width: 100%')
+            el-table-column(label='Producto')
+               template(slot-scope="scope")
+                  .p-list-order__cart-item
+                     .p-list-order__cart-item-img-content
+                        img.p-list-order__cart-item-img(:src="scope.row.image")
+                     .p-list-order__cart-item-name {{scope.row.name}}
+            el-table-column(
+               label='Cantidad',
+               class-name="p-list-order__cart-number",
+               prop="number"
+               )
+            el-table-column(
+               label='Precio por Unidad',
+               class-name="p-list-order__cart-price",
+               )
+               template(slot-scope="scope") S/ {{scope.row.price}}
+            el-table-column(
+               label='Subtotal',
+               class-name="p-list-order__cart-price",
+               prop="number*price"
+               )
+               template(slot-scope="scope") S/ {{scope.row.number * scope.row.price}}
+
+         .p-list-order__cart-total
+            .p-list-order__cart-total-title Monto total por orden
+            .p-list-order__cart-total-price S/ {{getTotalPrice(item.order)}}

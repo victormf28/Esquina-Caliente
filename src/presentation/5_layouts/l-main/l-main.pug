@@ -3,6 +3,6 @@
    .l-main__background(:class="{'is-active': showMenu}", @click="toggleMenu(false)")
    .l-main__header
       img.l-main__header-icon(src="@/assets/menu.png", @click="toggleMenu(true)")
-      .l-main__header-title Realizar Pedido
+      .l-main__header-title {{title}}
    slot
    

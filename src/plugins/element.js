@@ -9,7 +9,9 @@ import {
   MenuItem,
   Card,
   Tabs,
-  TabPane
+  TabPane,
+  Table,
+  TableColumn
 } from 'element-ui'
 import lang from 'element-ui/lib/locale/lang/es'
 import locale from 'element-ui/lib/locale'
@@ -26,3 +28,5 @@ Vue.use(MenuItem)
 Vue.use(Card)
 Vue.use(Tabs)
 Vue.use(TabPane)
+Vue.use(Table)
+Vue.use(TableColumn)

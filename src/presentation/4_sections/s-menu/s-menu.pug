@@ -4,10 +4,10 @@
       .s-menu__avatar-detail
          .s-menu__avatar-name Victor Morales
          .s-menu__avatar-role Administrador
-   el-menu.el-menu-vertical-demo(default-active='1')
-      el-menu-item(index='1' route="/registrar-orden/cliente")
+   el-menu.el-menu-vertical-demo(:default-active='$route.name', router)
+      el-menu-item(index='OrderCustomer' :route="{name: 'OrderCustomer'}")
          i.el-icon-edit-outline
          span Registrar Orden
-      el-menu-item(index='2' route="/atender-ordenes")
+      el-menu-item(index='ListarOrdenes' :route="{name: 'ListarOrdenes'}")
          i.el-icon-tickets
-         span Servir Ordenes
+         span Listar Ordenes

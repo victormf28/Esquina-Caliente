@@ -1,4 +1,4 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 
 import SMenu from '@/presentation/4_sections/s-menu/s-menu.vue';
 
@@ -7,6 +7,7 @@ import SMenu from '@/presentation/4_sections/s-menu/s-menu.vue';
 })
 export default class LMain extends Vue {
   public showMenu: boolean = false;
+  @Prop([String]) public title?: string;
 
   constructor() {
     super();

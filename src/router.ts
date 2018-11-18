@@ -1,10 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Home from './views/Home/Home.vue';
-import Menu from './views/Menu/Menu.vue';
 import PCustomer from './presentation/modules/order/4_pages/p-customer/p-customer.vue';
 import PMenu from './presentation/modules/order/4_pages/p-menu/p-menu.vue';
+import PListarOrder from './presentation/modules/order/4_pages/p-list-order/p-list-order.vue';
 
 Vue.use(Router);
 
@@ -14,13 +13,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
-    },
-    {
-      path: '/menu',
-      name: 'menu',
-      component: Menu,
+      redirect: '/registrar-orden/cliente',
     },
     {
       path: '/registrar-orden/cliente',
@@ -33,12 +26,9 @@ export default new Router({
       component: PMenu,
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      path: '/listar-ordenes',
+      name: 'ListarOrdenes',
+      component: PListarOrder,
     },
   ],
 });
